@@ -21,7 +21,25 @@
 			<td><%= user.username %></td>
 			<td><%= user.email %></td>
 			<td><%= user.is_admin %></td>
-			<td> <div class="btn-group"><a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> User</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"> </span> </a> <ul class="dropdown-menu"><li> <a href="/users/edit/1"><i class="icon-pencil"></i> Edit</a></li><li><a href="users/delete/1" onclick="return confirm('Are you sure want to delete this user?')"> <i class="icon-trash"></i> Delete</a></li><ul></ul></ul></div> </td>
+			<td> 
+				
+			<div class="btn-group">
+			<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> User</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"> </span> </a> 
+				<ul class="dropdown-menu">
+			
+				
+					
+				<li> <%= link_to('Edit', {:action => 'edit', :id => user.id}, :class => 'action edit') %> </li>
+				<li><%= link_to('Delete', {:action => 'delete', :id => user.id}, :class => 'action delete') %></li>
+				<ul>
+					
+				</ul>
+				</ul>
+			</div> 
+				
+			</td>
+			
+			
 			</tr>
 			<% end %>
 		</tbody>
