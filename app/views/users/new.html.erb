@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="span4 offset4">
+		<% @page_title = 'Create Admin User' %>
+
+		<div class="user new">
+			<h2>Create Admin User</h2>
+
+			<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
+
+			<%= render(:partial => 'form', :locals => {:f => f} ) %>
+			<br />
+			<div class="form-buttons" style="margin-left: 80px;">
+				<%= link_to("<< Back to List", {:action => 'list'}, :class => 'btn btn-inverse') %>
+				<%= submit_tag 'Create User', :class =>"btn btn-primary" %>
+			</div>
+
+			<% end %>
+		</div>
+
+	</div>
+
+</div>
