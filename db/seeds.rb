@@ -15,3 +15,18 @@ user = User.create([
     { first_name: 'Adriana', last_name:"Utomic",username:"utonic_82",password:"password",email:"utomic.82@hotmail.com",is_admin:false},
      { first_name: 'Karla', last_name:"Kwan",username:"kwan_82",password:"password",email:"kwan.82@hotmail.com",is_admin: false}
 ])
+
+puts "Success: Users data loaded"
+
+
+Contact.delete_all
+
+contact = Contact.create([
+  { first_name: 'Raul Ivan', last_name:"Garcia Valdivia",address:"reversible_82",status:"kamikaze",email:"raul.ivan.82@hotmail.com",user: User.last },
+  { first_name: 'Mario', last_name:"Zarate",address:"zarate_82",status:"status",email:"zarate82@hotmail.com",user: User.last},
+   { first_name: 'Jose', last_name:"Morris",address:"morris_82",status:"status",email:"morris.82@hotmail.com",user: User.last },
+    { first_name: 'Adriana', last_name:"Utomic",address:"utonic_82",status:"status",email:"utomic.82@hotmail.com",user: User.last},
+     { first_name: 'Karla', last_name:"Kwan",address:"kwan_82",status:"status",email:"kwan.82@hotmail.com",user: User.last}
+])
+
+puts "Success: Contacts data loaded"
