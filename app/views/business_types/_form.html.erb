@@ -1,0 +1,18 @@
+<% if @business_type.errors.any? %>
+<ul>
+	<% @business_type.errors.full_messages.each do |msg| %>
+	<li>
+		<%= msg %>
+	</li>
+	<% end %>
+</ul>
+<% end %>
+
+<div class="control-group">
+	<%= f.label :sector, :class=>"control-label" %>
+	<div class="controls">
+		<%= f.text_field(:sector) %>
+	</div>
+</div>
+
+

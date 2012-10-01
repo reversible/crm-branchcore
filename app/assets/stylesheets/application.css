@@ -11,3 +11,50 @@
  *= require_self
  *= require_tree .
  */
+
+
+.adress_text_area {
+	
+	width: 90%;
+	height: 250px;
+}
+
+	
+em.current {
+-webkit-border-image: none;
+background-color: white;
+border-bottom-color: #DDD;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: #DDD;
+border-left-style: solid;
+border-left-width: 0px;
+border-right-color: #DDD;
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: #DDD;
+border-top-style: solid;
+border-top-width: 1px;
+color: #000;
+cursor: auto;
+display: block;
+float: left;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 14px;
+font-weight: bold;
+height: 38px;
+line-height: 38px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+padding-bottom: 0px;
+padding-left: 14px;
+padding-right: 14px;
+padding-top: 0px;
+text-decoration: none;
+
+}
+em.current:hover {
+
+}

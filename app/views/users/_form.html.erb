@@ -1,36 +1,49 @@
 <% if @user.errors.any? %>
-  <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+<ul>
+	<% @user.errors.full_messages.each do |msg| %>
+	<li>
+		<%= msg %>
+	</li>
+	<% end %>
+</ul>
 <% end %>
 
-<table summary="user form fields">
-  <tr>
-    <th><%= f.label(:first_name) %></th>
-    <td><%= f.text_field(:first_name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:last_name) %></th>
-    <td><%= f.text_field(:last_name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:email) %></th>
-    <td><%= f.text_field(:email) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:username) %></th>
-    <td><%= f.text_field(:username) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:password) %></th>
-    <td><%= f.password_field(:password) %></td>
-  </tr>
-  
-  <tr>
-    <th><%= f.label(:is_admin) %></th>
-    <td><%= f.check_box (:is_admin) %></td>
-  </tr>
-  
-</table>
+<div class="control-group">
+	<%= f.label :first_name, :class=>"control-label" %>
+	<div class="controls">
+		<%= f.text_field(:first_name) %>
+	</div>
+</div>
+
+<div class="control-group">
+	<%= f.label :last_name,:class=>"control-label" %>
+	<div class="controls">
+		<%= f.text_field(:last_name) %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label :email, :class=>"control-label" %>
+	<div class="controls">
+		<%= f.text_field(:email) %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label :username, :class=>"control-label" %>
+	<div class="controls">
+		<%= f.text_field(:username) %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label :password, :class=>"control-label" %>
+	<div class="controls">
+		<%= f.password_field(:password) %>
+	</div>
+</div>
+
+<div class="control-group">
+	<%= f.label :is_admin, :class=>"control-label" %>
+	<div class="controls">
+		<%= f.check_box (:is_admin) %>
+	</div>
+</div>
+

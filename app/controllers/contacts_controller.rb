@@ -3,14 +3,16 @@ class ContactsController < ApplicationController
   layout "admin"
   
   def  index
-    @contacts = Contact.all
+    
+    @contacts= Contact.paginate(:page => params[:page])
+    
     render "list"
 
   end
 
   def list
 
-    @contacts = Contact.all
+    @contacts= Contact.paginate(:page => params[:page])
 
     respond_to do |format|
 
@@ -52,7 +54,7 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
-    if @contact.update_attributes(params[:Contact])
+    if @contact.update_attributes(params[:contact])
       flash[:notice] = 'Contact updated.'
       redirect_to(:action => 'list')
     else

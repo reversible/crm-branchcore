@@ -1,47 +1,55 @@
 <% if @contact.errors.any? %>
-  <ul>
-    <% @contact.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+<ul>
+	<% @contact.errors.full_messages.each do |msg| %>
+	<li>
+		<%= msg %>
+	</li>
+	<% end %>
+</ul>
 <% end %>
 
 <table summary="contact form fields">
-	
-	  <tr>
-    <th><%= f.label(:user_id, "User") %></th>
-    <td><%= f.select(:user_id, @users.collect {|s| [s.name, s.id]}) %></td>
-  </tr>
-  
-  <tr>
-    <th><%= f.label(:status) %></th>
-    
-    <td>    	
-    <%= f.select :status, options_for_select([["Active", "ACTIVE"], ["Inactive", "INACTIVE"]]) %>	
-    </td>
-  </tr>
-	
-  <tr>
-    <th><%= f.label(:first_name) %></th>
-    <td><%= f.text_field(:first_name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:last_name) %></th>
-    <td><%= f.text_field(:last_name) %></td>
-  </tr>
-  
- 
-  
-  
-  
-  <tr>
-    <th><%= f.label(:email) %></th>
-    <td><%= f.text_field(:email) %></td>
-  </tr>
-  
-   <tr>
-    <th><%= f.label(:address) %></th>
-    <td><%= f.text_area  :address %></td>
-  </tr>
-  
+
+	<div class="control-group">
+		<%= f.label :user_id, "User",:class=>"control-label" %>
+		<div class="controls">
+			<%= f.select(:user_id, @users.collect {|s| [s.name, s.id]}) %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.label :status, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.select :status, options_for_select([["Active", "ACTIVE"], ["Inactive", "INACTIVE"]]) %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.label :first_name, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.text_field :first_name %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.label :last_name, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.text_field :last_name %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.label :email, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.text_field :email %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.label :address, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.text_area  :address, :class=>"adress_text_area" %>
+		</div>
+	</div>
+
 </table>

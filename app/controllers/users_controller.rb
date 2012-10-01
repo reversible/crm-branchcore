@@ -4,15 +4,15 @@ class UsersController < ApplicationController
   
   
   def index
-     @users = User.all
+    @users= User.paginate(:page => params[:page])
      render "list"
   end
   
   
   
   def list
-
-    @users = User.all
+    
+   @users= User.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

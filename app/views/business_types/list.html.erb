@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="span10 offset1">
+		<h1>Listing Business Types</h1>
+
+		<table class="table table-hover"">
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Sector</th>
+			<th>Actions</th>
+		</tr>
+		</thead>
+		<tbody>
+			<% @business_types.each do |business_type| %>
+			<tr>
+			<td><%= business_type.id %></td>	
+			<td><%= business_type.sector %></td>
+			<td> 
+				
+			<div class="btn-group">
+			<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Business Type</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"> </span> </a> 
+				<ul class="dropdown-menu">
+			
+				
+					
+				<li> <%= link_to("Edit", {:action => 'edit', :id => business_type.id}) %> </li>
+				<li><%= link_to("Delete".html_safe, {:action => 'delete', :id => business_type.id}) %></li>
+				<ul>
+					
+				</ul>
+				</ul>
+			</div> 
+				
+			</td>
+			
+			
+			</tr>
+			<% end %>
+		</tbody>
+		</table>
+		
+		
+		<div class="other_actions">
+			<%= link_to "Add business type", {:action=>"new"}, :class => "btn btn-primary" %>
+			<br />
+				<%= will_paginate @business_types %>
+		</div>	
+		
+		<br />
+	</div>
+</div>

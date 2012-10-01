@@ -1,19 +1,19 @@
 <div class="row">
 	<div class="span6 offset3" >
-		<% @page_title = 'Create Admin User' %>
+		<% @page_title = 'Create Business Type' %>
 
 
 			<div class="well">
-				<%= form_for(:user, :url => {:action => 'create'}, :html =>{:class=>"form-horizontal"}) do |f| %>
+				<%= form_for(:business_type, :url => {:action => 'create'}, :html =>{:class=>"form-horizontal"}) do |f| %>
 				<legend>
-					Create User
+					Create Business Type
 				</legend>
 				<%= render(:partial => 'form', :locals => {:f => f} ) %>
 
 				<div class="form-buttons pull-right" >
 					
 					<%= link_to("Back to List", {:action => 'list'}, :class => 'btn btn-inverse') %>
-					<%= submit_tag 'Create User', :class =>"btn btn-primary" %>
+					<%= submit_tag 'Create Business Type', :class =>"btn btn-primary" %>
 				</div>
 	<br />
 				<% end %>
