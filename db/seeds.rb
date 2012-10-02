@@ -45,3 +45,14 @@ business_type = BusinessType.create([
 ])
 end
 puts "Success: Business types data loaded"
+
+
+Account.delete_all
+100.times do
+accounts = Account.create([
+  { name: 'Nike', address: "some place in NYC", description:"Great shoes company", account_type: "enterprice", email: "rg@rdedeg.com", user: User.last , business_type: BusinessType.last  },
+  { name: 'CocaCOla', address: "some place in Minesota", description:"Great Soda company", account_type: "small", email: "rg@rdedeg.com",  user: User.last , business_type: BusinessType.last  },
+  { name: '37 Signals', address: "some place in Chicago", description:"Web application", account_type: "huge", email: "rg@rdedeg.com",  user: User.last , business_type: BusinessType.last },
+])
+end
+puts "Success: Accounts data loaded"
