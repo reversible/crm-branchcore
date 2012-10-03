@@ -93,6 +93,41 @@
 
 								</ul>
 							</li>
+							
+							
+							<li class="dropdown <%= controller?("opportunities") ? "active":"" %>">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Opportunities <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+
+									<li>
+										<%= link_to "Add Opportunity", {:controller =>"opportunities", :action => "new", }%>
+									</li>
+									<li class="divider"></li>
+
+									<li>
+										<%= link_to "Manage Opportunities", {:controller =>"opportunities"}%>
+									</li>
+
+								</ul>
+							</li>
+						
+						
+							<li class="dropdown <%= controller?("tasks") ? "active":"" %>">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tasks <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+
+									<li>
+										<%= link_to "Add Task", {:controller =>"tasks", :action => "new", }%>
+									</li>
+									<li class="divider"></li>
+
+									<li>
+										<%= link_to "Manage Task", {:controller =>"tasks"}%>
+									</li>
+
+								</ul>
+							</li>
+							
 
 						</ul>
 						<ul class="nav pull-right">

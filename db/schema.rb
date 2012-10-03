@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002035211) do
+ActiveRecord::Schema.define(:version => 20121003050244) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
@@ -38,6 +38,30 @@ ActiveRecord::Schema.define(:version => 20121002035211) do
     t.string   "address"
     t.string   "status"
     t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "opportunities", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "account_id"
+    t.decimal  "amount",      :precision => 8, :scale => 2
+    t.string   "status"
+    t.string   "description"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.integer  "account_id"
+    t.integer  "user_id"
+    t.integer  "contact_id"
+    t.string   "subject"
+    t.string   "status"
+    t.datetime "start_date"
+    t.datetime "limit_date"
+    t.datetime "end_date"
+    t.integer  "priority"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

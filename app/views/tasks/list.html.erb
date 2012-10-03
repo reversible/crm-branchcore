@@ -1,0 +1,64 @@
+<div class="row">
+	<div class="span12">
+		<h1>Listing Tasks</h1>
+
+		<table class="table table-hover"">
+		<thead>
+		<tr>
+		<th>Id</th>
+		<th>Subject</th>
+		<th>User Assigned</th>
+		<th>Contact</th>
+		<th>Account</th>
+
+		<th>Start Date</th>
+		<th>Limit Date</th>
+		<th>End Date</th>
+
+		<th>Actions</th>
+		</tr>
+		</thead>
+		<tbody>
+		<% @tasks.each do |task| %>
+		<tr>
+		<td><%= task.id %></td>
+		<td><%= task.subject %></td>
+		<td><%= task.user ? task.user.name : "N/A"  %></td>
+		<td><%= task.contact ? task.contact.name : "N/A"  %></td>
+		<td><%= task.account ? task.account.name : "N/A"  %></td>
+		<td><%= task.start_date %></td>
+		<td><%= task.limit_date %></td>
+		<td><%= task.end_date %></td>
+
+		<td>
+
+		<div class="btn-group">
+		<a class="btn btn-primary" href="#"><i class="icon-task icon-white"></i> task</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"> </span> </a>
+		<ul class="dropdown-menu">
+
+		<li> <%= link_to("Edit", {:action => 'edit', :id => task.id}) %> </li>
+		<li><%= link_to("Delete".html_safe, {:action => 'delete', :id => task.id}) %></li>
+		<ul>
+
+		</ul>
+		</ul>
+	</div>
+
+	</td>
+
+	</tr>
+	<% end %>
+	</tbody>
+
+	</table>
+
+	<div class="other_actions">
+		<%= link_to "Add task", {:action=>"new"}, :class => "btn btn-primary" %>
+
+		<%= will_paginate @tasks %>
+
+	</div>
+
+	<br />
+</div>
+</div>

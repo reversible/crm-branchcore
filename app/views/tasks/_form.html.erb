@@ -1,0 +1,70 @@
+<% if @task.errors.any? %>
+<ul>
+	<% @task.errors.full_messages.each do |msg| %>
+	<li>
+		<%= msg %>
+	</li>
+	<% end %>
+</ul>
+<% end %>
+
+<table summary="contact form fields">
+
+	<div class="control-group">
+		<%= f.label :account_id, "Account",:class=>"control-label" %>
+		<div class="controls">
+			<%= f.select(:account_id, @accounts.collect {|s| [s.name, s.id]}) %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.label :contact_id, "Contact",:class=>"control-label" %>
+		<div class="controls">
+			<%= f.select(:contact_id, @contacts.collect {|s| [s.name, s.id]}) %>
+		</div>
+	</div>
+	
+
+<div class="control-group">
+		<%= f.label :user_id, "User",:class=>"control-label" %>
+		<div class="controls">
+			<%= f.select(:user_id, @users.collect {|s| [s.name, s.id]}) %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.label :subject, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.text_field :subject %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.label :status, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.select :status, options_for_select([["Active", "ACTIVE"], ["Inactive", "INACTIVE"]]) %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.label :start_date, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.datetime_select :start_date %>
+		</div>
+	</div>
+
+	<div class="control-group ">
+		<%= f.label :limit_date, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.datetime_select :limit_date %>
+		</div>
+	</div>
+	
+		<div class="control-group">
+		<%= f.label :end_date, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.datetime_select :end_date %>
+		</div>
+	</div>
+
+</table>
