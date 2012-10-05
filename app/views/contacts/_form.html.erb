@@ -1,5 +1,6 @@
 <% if @contact.errors.any? %>
-<ul>
+
+<ul class="alert alert-error error_form_list">
 	<% @contact.errors.full_messages.each do |msg| %>
 	<li>
 		<%= msg %>
@@ -44,6 +45,14 @@
 			<%= f.text_field :email %>
 		</div>
 	</div>
+	
+	<div class="control-group">
+		<%= f.label :email_confirmation, :class=>"control-label" %>
+		<div class="controls">
+			<%= f.text_field :email_confirmation %>
+		</div>
+	</div>
+	
 
 	<div class="control-group">
 		<%= f.label :address, :class=>"control-label" %>

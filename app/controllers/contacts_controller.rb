@@ -41,6 +41,7 @@ class ContactsController < ApplicationController
       redirect_to :action => "list"
 
     else
+      @users = User.order('id ASC')
       render "new"
 
     end

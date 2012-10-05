@@ -58,3 +58,13 @@ text-decoration: none;
 em.current:hover {
 
 }
+
+ul.error_form_list {
+list-style-type: none;	
+	
+}
+ul.error_form_list li{
+text-decoration: underline;	
+	
+}
+

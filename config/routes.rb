@@ -1,14 +1,5 @@
 CrmBranchcore::Application.routes.draw do
 
-  get "business_types/_form"
-
-  get "business_types/delete"
-
-  get "business_types/edit"
-
-  get "business_types/list"
-
-  get "business_types/new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
