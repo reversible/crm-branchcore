@@ -4,4 +4,9 @@ class BusinessType < ActiveRecord::Base
    has_many :accounts
    
    attr_accessible :sector
+   
+   
+   validates :sector,:presence=>true, :length => { :maximum => 50 }
+   
+   
 end

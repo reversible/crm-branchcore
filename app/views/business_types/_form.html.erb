@@ -1,5 +1,5 @@
 <% if @business_type.errors.any? %>
-<ul>
+<ul class="alert alert-error error_form_list">
 	<% @business_type.errors.full_messages.each do |msg| %>
 	<li>
 		<%= msg %>
