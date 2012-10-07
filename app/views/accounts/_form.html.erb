@@ -1,5 +1,5 @@
 <% if @account.errors.any? %>
-<ul>
+<ul class="alert alert-error error_form_list">
 	<% @account.errors.full_messages.each do |msg| %>
 	<li>
 		<%= msg %>
@@ -13,21 +13,21 @@
 	<div class="control-group">
 		<%= f.label :user_id, "User",:class=>"control-label" %>
 		<div class="controls">
-			<%= f.select(:user_id, @users.collect {|s| [s.name, s.id]}) %>
+			<%= f.select(:user_id, @users.collect {|s| [s.name, s.id]},{:prompt => 'Select a user'}) %>
 		</div>
 	</div>
 
 	<div class="control-group">
 		<%= f.label :business_type_id, "Bussiness Type",:class=>"control-label" %>
 		<div class="controls">
-			<%= f.select(:business_type_id, @business_types.collect {|s| [s.sector, s.id]}) %>
+			<%= f.select(:business_type_id, @business_types.collect {|s| [s.sector, s.id]},{:prompt => 'Select a business type'}) %>
 		</div>
 	</div>
 
 	<div class="control-group">
 		<%= f.label :account_type, :class=>"control-label" %>
 		<div class="controls">
-			<%= f.select :account_type, options_for_select([["Small", "SMALL"], ["Big", "BIG"]]) %>
+			<%= f.select :account_type, options_for_select([["Select an account type",""],["Small", "SMALL"], ["Big", "BIG"]]) %>
 		</div>
 	</div>
 

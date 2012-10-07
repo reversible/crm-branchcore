@@ -1,11 +1,10 @@
 class AccountsController < ApplicationController
-  
+
   layout "admin"
-  
   def  index
-    
+
     @accounts= Account.paginate(:page => params[:page])
-    
+
     render "list"
 
   end
@@ -33,7 +32,7 @@ class AccountsController < ApplicationController
 
   def create
 
-    @account = Account.new(params[:Account])
+    @account = Account.new(params[:account])
 
     if @account.save
 
@@ -42,6 +41,9 @@ class AccountsController < ApplicationController
       redirect_to :action => "list"
 
     else
+
+      @users = User.order('id ASC')
+      @business_types = BusinessType.order('id ASC')
       render "new"
 
     end
@@ -52,7 +54,6 @@ class AccountsController < ApplicationController
     @users = User.order('id ASC')
     @business_types = BusinessType.order('id ASC')
 
-
   end
 
   def update
@@ -61,6 +62,8 @@ class AccountsController < ApplicationController
       flash[:notice] = 'Account updated.'
       redirect_to(:action => 'list')
     else
+      @users = User.order('id ASC')
+      @business_types = BusinessType.order('id ASC')
       render("edit")
     end
   end
@@ -73,6 +76,6 @@ class AccountsController < ApplicationController
     Account.find(params[:id]).destroy
     flash[:notice] = "Account destroyed."
     redirect_to(:action => 'list')
-  end 
-  
+  end
+
 end

@@ -1,5 +1,5 @@
 <% if @task.errors.any? %>
-<ul>
+<ul class="alert alert-error error_form_list">
 	<% @task.errors.full_messages.each do |msg| %>
 	<li>
 		<%= msg %>
@@ -13,14 +13,14 @@
 	<div class="control-group">
 		<%= f.label :account_id, "Account",:class=>"control-label" %>
 		<div class="controls">
-			<%= f.select(:account_id, @accounts.collect {|s| [s.name, s.id]}) %>
+			<%= f.select(:account_id, @accounts.collect {|s| [s.name, s.id]},{:prompt => 'Select an account'}) %>
 		</div>
 	</div>
 
 	<div class="control-group">
 		<%= f.label :contact_id, "Contact",:class=>"control-label" %>
 		<div class="controls">
-			<%= f.select(:contact_id, @contacts.collect {|s| [s.name, s.id]}) %>
+			<%= f.select(:contact_id, @contacts.collect {|s| [s.name, s.id]},{:prompt => 'Select a contact'}) %>
 		</div>
 	</div>
 	
@@ -28,7 +28,7 @@
 <div class="control-group">
 		<%= f.label :user_id, "User",:class=>"control-label" %>
 		<div class="controls">
-			<%= f.select(:user_id, @users.collect {|s| [s.name, s.id]}) %>
+			<%= f.select(:user_id, @users.collect {|s| [s.name, s.id]} ,{:prompt => 'Select a user'}) %>
 		</div>
 	</div>
 
@@ -42,7 +42,7 @@
 	<div class="control-group">
 		<%= f.label :status, :class=>"control-label" %>
 		<div class="controls">
-			<%= f.select :status, options_for_select([["Active", "ACTIVE"], ["Inactive", "INACTIVE"]]) %>
+			<%= f.select :status, options_for_select([["Active", "ACTIVE"], ["Inactive", "INACTIVE"]],{:prompt => 'Select a status'}) %>
 		</div>
 	</div>
 

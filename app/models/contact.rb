@@ -13,7 +13,10 @@ class Contact < ActiveRecord::Base
 
 EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i  
 
-  
+
+
+validates :user, :presence=>true  
+validates :status, :presence=>true  
 validates :first_name, :presence=>true, :length => { :maximum => 40 }
 validates :last_name, :presence=>true, :length => { :maximum => 40 }
 validates :address, :presence=>true, :length => {:minimum=>15, :maximum => 1000 }

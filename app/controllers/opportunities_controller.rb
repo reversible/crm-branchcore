@@ -43,6 +43,8 @@ class OpportunitiesController < ApplicationController
       redirect_to :action => "list"
 
     else
+    @users = User.order('id ASC')
+    @accounts = Account.order('id ASC')
       render "new"
 
     end
@@ -61,6 +63,8 @@ class OpportunitiesController < ApplicationController
       flash[:notice] = 'Opportunity updated.'
       redirect_to(:action => 'list')
     else
+      @users = User.order('id ASC')
+      @accounts = Account.order('id ASC')
       render("edit")
     end
   end

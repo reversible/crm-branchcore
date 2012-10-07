@@ -38,14 +38,18 @@ class TasksController < ApplicationController
 
     @task= Task.new(params[:task])
 
-    if @Task.save
+    if @task.save
 
       flash[:notice] = "Task created"
 
       redirect_to :action => "list"
 
     else
-      render "new"
+      
+    @accounts = Account.order('id ASC')
+    @users = User.order('id ASC')
+    @contacts = Contact.order('id ASC')
+    render "new"
 
     end
   end
@@ -66,6 +70,9 @@ class TasksController < ApplicationController
       flash[:notice] = 'Task updated.'
       redirect_to(:action => 'list')
     else
+    @accounts = Account.order('id ASC')
+    @users = User.order('id ASC')
+    @contacts = Contact.order('id ASC')
       render("edit")
     end
   end
