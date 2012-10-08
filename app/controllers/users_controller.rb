@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   layout "admin"
   
+    before_filter :confirm_logged_in
   
   def index
     @users= User.paginate(:page => params[:page])

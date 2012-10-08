@@ -3,6 +3,11 @@ class OpportunitiesController < ApplicationController
   
    layout "admin"
   
+  
+  
+    before_filter :confirm_logged_in
+    
+    
   def  index
     
     @opportunities= Opportunity.paginate(:page => params[:page])

@@ -93,8 +93,7 @@
 
 								</ul>
 							</li>
-							
-							
+
 							<li class="dropdown <%= controller?("opportunities") ? "active":"" %>">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Opportunities <b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -110,8 +109,7 @@
 
 								</ul>
 							</li>
-						
-						
+
 							<li class="dropdown <%= controller?("tasks") ? "active":"" %>">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tasks <b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -127,21 +125,17 @@
 
 								</ul>
 							</li>
-							
 
 						</ul>
 						<ul class="nav pull-right">
 
 							<li class="divider-vertical"></li>
 							<li class="dropdown active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">reversible_82 <b class="caret"></b></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= session[:current_user].name %> <b class="caret"></b></a>
 								<ul class="dropdown-menu">
+
 									<li>
-										<a href="http://www.ethicalcoder.com/home">Go to Website!</a>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<a href="http://www.ethicalcoder.com/login/logout">Logout</a>
+										<%= link_to "Sign out", {:controller =>"access", :action => "logout", }%>
 									</li>
 								</ul>
 							</li>
@@ -153,12 +147,19 @@
 
 		<div class="container">
 
+			<% flash.each do |name, msg| %>
+			<div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+				<a class="close" data-dismiss="alert">&#215;</a>
+				<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+			</div>
+			<% end %>
+
 			<%= yield %>
 
 			<hr>
 			<footer>
 				<p>
-					&copy; Company 2012
+					&copy; Branchcore CRM - Company 2012
 				</p>
 			</footer>
 

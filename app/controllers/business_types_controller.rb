@@ -1,6 +1,7 @@
 class BusinessTypesController < ApplicationController
   layout "admin"
   
+    before_filter :confirm_logged_in
   
   def index
     @business_types= BusinessType.paginate(:page => params[:page])

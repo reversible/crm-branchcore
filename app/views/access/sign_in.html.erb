@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="span4 offset4" >
+		<% @page_title = 'Sign in' %>
+		<div class="well">
+
+			<%= form_tag(:action => 'attempt_login', :html =>{:class=>"form-horizontal"}) do %>
+			<legend>Sign in</legend>
+			<div class="control-group">
+				<%= label_tag(:username,"Username",:class=>"control-label") %>
+				<div class="controls">
+					<%= text_field_tag(:username) %>
+				</div>
+			</div>
+			<div class="control-group">
+
+				<%= label_tag(:password,"Password",:class=>"control-label") %>
+				<div class="controls">
+					<%= password_field_tag(:password) %>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= submit_tag("Log In") %>
+			</div>
+		</div>
+
+		<% end %>
+	</div>
+</div>

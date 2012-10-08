@@ -3,6 +3,9 @@ class TasksController < ApplicationController
   
   layout "admin"
   
+  
+    before_filter :confirm_logged_in
+  
   def  index
     
     @tasks= Task.paginate(:page => params[:page])

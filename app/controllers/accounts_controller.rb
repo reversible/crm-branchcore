@@ -1,6 +1,9 @@
 class AccountsController < ApplicationController
 
   layout "admin"
+  
+    before_filter :confirm_logged_in
+  
   def  index
 
     @accounts= Account.paginate(:page => params[:page])
