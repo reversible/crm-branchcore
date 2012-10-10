@@ -1,35 +1,79 @@
 CrmBranchcore::Application.routes.draw do
 
 
-  get "access/login"
+#get "access/sing_up"
 
-  get "access/sing_up"
+#get "access/logout"
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+#get "access/sign_in"
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+# The priority is based upon order of creation:
+# first created -> highest priority.
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
+# Sample of regular route:
+#   match 'products/:id' => 'catalog#view'
+# Keep in mind you can assign values other than :controller and :action
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+# Sample of named route:
+#   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+# This route can be invoked with purchase_url(:id => product.id)
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+# Sample resource route (maps HTTP verbs to controller actions automatically):
+# resources :users
+
+#Sample resource route with options:
+  resources :users do
+    member do
+      get 'delete'
+    end
+
+  end
+
+  resources :contacts do
+    member do
+      get 'delete'
+    end
+  end
+
+  resources :business_types do
+
+    member do
+      get 'delete'
+    end
+
+  end
+
+  resources :accounts do
+
+    member do
+      get 'delete'
+    end
+
+  end
+
+  resources :opportunities do
+
+    member do
+      get 'delete'
+    end
+
+  end
+
+  resources :tasks do
+
+    member do
+      get 'delete'
+    end
+
+  end
+
+  resources :access do
+     member do
+      get 'sign_up'
+        get 'sign_in'
+          get 'logout'
+    end
+  end
 
   # Sample resource route with sub-resources:
   #   resources :products do
@@ -56,9 +100,9 @@ CrmBranchcore::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'users#list'
 
-  # See how all your routes lay out with "rake routes"
+# See how all your routes lay out with "rake routes"
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-   match ':controller(/:action(/:id))(.:format)'
+# This is a legacy wild controller route that's not recommended for RESTful applications.
+# Note: This route will make all actions in every controller accessible via GET requests.
+#match ':controller(/:action(/:id))(.:format)'
 end
