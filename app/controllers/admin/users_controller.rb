@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
 
   layout "admin"
   
@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   
   def index
     @users= User.paginate(:page => params[:page])
-     render "list"
+    render "list"
   end
   
   
@@ -68,5 +68,8 @@ class UsersController < ApplicationController
     flash[:notice] = "Admin user destroyed."
     redirect_to(:action => 'list')
   end
+  
+ 
+  
 
 end

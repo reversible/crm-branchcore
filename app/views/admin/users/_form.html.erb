@@ -8,6 +8,8 @@
 </ul>
 <% end %>
 
+<%= form_for([:admin,@user]) do |f| %>
+
 <div class="control-group">
 	<%= f.label :first_name, :class=>"control-label" %>
 	<div class="controls">
@@ -48,7 +50,6 @@
 	</div>
 </div>
 
-
 <div class="control-group">
 	<%= f.label :password_confirmation, :class=>"control-label" %>
 	<div class="controls">
@@ -63,3 +64,9 @@
 	</div>
 </div>
 
+<div class="form-buttons pull-right" >
+	<%= link_to("Back to List", admin_user_path, :class => 'btn btn-inverse') %>
+	<%= submit_tag 'Create User', :class =>"btn btn-primary" %>
+</div>
+
+<% end %>

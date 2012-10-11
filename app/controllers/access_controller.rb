@@ -20,10 +20,10 @@ class AccessController < ApplicationController
     if current_user
       session[:current_user] = current_user
       flash[:notice] = "You are now logged in."
-      redirect_to(:controller=>"users")
+      redirect_to(admin_users_path)
     else
       flash[:notice] = "Invalid username/password combination."
-      redirect_to(:action => 'sign_in')
+      redirect_to(access_sign_in_path)
     end
 
   end

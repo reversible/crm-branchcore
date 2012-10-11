@@ -31,8 +31,8 @@
 			
 				
 					
-				<li> <%= link_to("Edit", {:action => 'edit', :id => user.id}) %> </li>
-				<li><%= link_to("Delete".html_safe, {:action => 'delete', :id => user.id}) %></li>
+				<li> <%= link_to "Edit", edit_admin_user_path(user) %> </li>
+				<li><%= link_to "Delete", delete_admin_user_path(user) %></li>
 				<ul>
 					
 				</ul>
@@ -49,7 +49,7 @@
 		
 		
 		<div class="other_actions">
-			<%= link_to "Add User", {:action=>"new"}, :class => "btn btn-primary" %>
+			<%= link_to "Add User", new_admin_user_path, :class => "btn btn-primary" %>
 			<br />
 				<%= will_paginate @users %>
 		</div>	

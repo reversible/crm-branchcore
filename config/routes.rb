@@ -10,8 +10,18 @@ CrmBranchcore::Application.routes.draw do
 # The priority is based upon order of creation:
 # first created -> highest priority.
 
+
+root :to => 'access#sign_in'  
+
 # Sample of regular route:
-#   match 'products/:id' => 'catalog#view'
+
+match 'access/sign_in' => 'access#sign_in'
+match 'access/sign_up' => 'access#sign_up'
+match 'access/logout' => 'access#logout'
+match 'access/attempt_login' => 'access#attempt_login'
+
+
+
 # Keep in mind you can assign values other than :controller and :action
 
 # Sample of named route:
@@ -22,7 +32,12 @@ CrmBranchcore::Application.routes.draw do
 # resources :users
 
 #Sample resource route with options:
-  resources :users do
+
+namespace :admin do
+
+root :to => 'users#index'
+
+  resources :users, :except => [:show] do
     member do
       get 'delete'
     end
@@ -66,14 +81,10 @@ CrmBranchcore::Application.routes.draw do
     end
 
   end
-
-  resources :access do
-     member do
-      get 'sign_up'
-        get 'sign_in'
-          get 'logout'
-    end
-  end
+  
+end
+  
+  
 
   # Sample resource route with sub-resources:
   #   resources :products do
@@ -98,7 +109,6 @@ CrmBranchcore::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'users#list'
 
 # See how all your routes lay out with "rake routes"
 

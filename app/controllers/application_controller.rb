@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def confirm_logged_in
     unless session[:current_user]
       flash[:notice] = "Please log in."
-      redirect_to("/access/sign_in");
+      redirect_to(access_sign_in_path);
       return false # halts the before_filter
     else
       return true
