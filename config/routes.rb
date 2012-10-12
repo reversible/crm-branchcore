@@ -35,11 +35,10 @@ match 'access/attempt_login' => 'access#attempt_login'
 
 namespace :admin do
 
-root :to => 'users#index'
-
+  root :to => 'users#index'
   resources :users, :except => [:show] do
     member do
-      get 'delete'
+     get 'delete'
     end
 
   end

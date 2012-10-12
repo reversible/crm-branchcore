@@ -36,7 +36,7 @@ class Admin::UsersController < ApplicationController
 
       flash[:notice] = 'User created.'
 
-      redirect_to(:action => 'list')
+      redirect_to admin_users_path
 
     else
       render("new")
@@ -53,7 +53,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:notice] = 'User updated.'
-      redirect_to(:action => 'list')
+      redirect_to admin_users_path
     else
       render("edit")
     end
@@ -66,7 +66,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:notice] = "Admin user destroyed."
-    redirect_to(:action => 'list')
+   redirect_to admin_users_path
   end
   
  

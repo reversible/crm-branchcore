@@ -11,8 +11,8 @@
     <p class="reference-name"><%= @user.name %></p>
   
     <div class="form-buttons">
-    	<%= link_to "Back to List", user_path , :class => 'btn btn-inverse' %>
-		<%= link_to "Back to List", @user, method: :delete,  :class => 'btn btn-danger' %>
+    	<%= link_to "Back to List", admin_users_path , :class => 'btn btn-inverse' %>
+		<%= link_to "Delete", [:admin,@user], method: :delete,  :class => 'btn btn-danger' %>
 		  	  
 
     </div>

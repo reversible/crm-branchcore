@@ -24,20 +24,13 @@
 			<td><%= user.email %></td>
 			<td><%= user.is_admin %></td>
 			<td> 
-				
-			<div class="btn-group">
-			<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> User</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"> </span> </a> 
-				<ul class="dropdown-menu">
-			
+								
+					
+	 			<%= link_to "Edit", edit_admin_user_path(user), :class=>"btn btn-info" %>
+				<%= link_to "Delete", delete_admin_user_path(user), :class=>"btn btn-danger" %>
 				
 					
-				<li> <%= link_to "Edit", edit_admin_user_path(user) %> </li>
-				<li><%= link_to "Delete", delete_admin_user_path(user) %></li>
-				<ul>
-					
-				</ul>
-				</ul>
-			</div> 
+				
 				
 			</td>
 			
@@ -49,7 +42,7 @@
 		
 		
 		<div class="other_actions">
-			<%= link_to "Add User", new_admin_user_path, :class => "btn btn-primary" %>
+			<%= link_to "New User", new_admin_user_path, :class => "btn btn-primary" %>
 			<br />
 				<%= will_paginate @users %>
 		</div>	
