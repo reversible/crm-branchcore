@@ -1,4 +1,4 @@
-class ContactsController < ApplicationController
+class Admin::ContactsController < ApplicationController
 
   layout "admin"
   
@@ -40,7 +40,7 @@ class ContactsController < ApplicationController
 
       flash[:notice] = "Contact created"
 
-      redirect_to :action => "list"
+      redirect_to admin_contacts_path
 
     else
       @users = User.order('id ASC')
@@ -59,8 +59,9 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     if @contact.update_attributes(params[:contact])
       flash[:notice] = 'Contact updated.'
-      redirect_to(:action => 'list')
+      redirect_to admin_contacts_path
     else
+       @users = User.order('id ASC')
       render("edit")
     end
   end
@@ -71,8 +72,8 @@ class ContactsController < ApplicationController
 
   def destroy
     Contact.find(params[:id]).destroy
-    flash[:notice] = "Contact destroyed."
-    redirect_to(:action => 'list')
+    flash[:notice] = "Contact deleted."
+   redirect_to admin_contacts_path
   end
 
 end

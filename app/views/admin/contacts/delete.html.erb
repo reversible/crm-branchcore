@@ -5,19 +5,16 @@
 
 <div class="user delete">
   <h2>Delete Admin User</h2>
-  
-  <%= form_for(:contact, :url => {:action => 'destroy', :id => @contact.id}) do |f| -%>
 
     <p>Are you sure you want to permanently delete this contact?</p>
   
     <p class="reference-name"><%= @contact.name %></p>
   
     <div class="form-buttons">
-    	<%= link_to("Back to List", {:action => 'list'}, :class => 'btn btn-inverse') %>
-      <%= submit_tag "Delete Contact", :class => "btn btn-danger" %>
+    	<%= link_to "Back to List", admin_contacts_path , :class => 'btn btn-inverse' %>
+		<%= link_to "Delete", [:admin,@contact], method: :delete,  :class => 'btn btn-danger' %>
     </div>
     
-  <% end %>
 </div>
 </div>
 </div>
