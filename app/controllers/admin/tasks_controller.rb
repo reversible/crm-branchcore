@@ -1,4 +1,4 @@
-class TasksController < ApplicationController
+class Admin::TasksController < ApplicationController
   
   
   layout "admin"
@@ -45,7 +45,7 @@ class TasksController < ApplicationController
 
       flash[:notice] = "Task created"
 
-      redirect_to :action => "list"
+      redirect_to admin_tasks_path
 
     else
       
@@ -71,7 +71,7 @@ class TasksController < ApplicationController
     @task= Task.find(params[:id])
     if @task.update_attributes(params[:task])
       flash[:notice] = 'Task updated.'
-      redirect_to(:action => 'list')
+      redirect_to admin_tasks_path
     else
     @accounts = Account.order('id ASC')
     @users = User.order('id ASC')
@@ -86,8 +86,8 @@ class TasksController < ApplicationController
 
   def destroy
     Task.find(params[:id]).destroy
-    flash[:notice] = "Task destroyed."
-    redirect_to(:action => 'list')
+    flash[:notice] = "Task deleted."
+      redirect_to admin_tasks_path
   end
 
   

@@ -2,7 +2,7 @@
 	<div class="span10 offset1">
 		<h1>Listing Opportunities</h1>
 
-		<table class="table table-hover"">
+		<table class="table table-hover">
 		<thead>
 		<tr>
 		<th>Id</th>	
@@ -23,19 +23,11 @@
 		<td><%= opportunity.status %></td>
 
 		<td>
-
-		<div class="btn-group">
-		<a class="btn btn-primary" href="#"><i class="icon-opportunity icon-white"></i> opportunity</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"> </span> </a>
-		<ul class="dropdown-menu">
-
-		<li> <%= link_to("Edit", {:action => 'edit', :id => opportunity.id}) %> </li>
-		<li><%= link_to("Delete".html_safe, {:action => 'delete', :id => opportunity.id}) %></li>
-		<ul>
-
-		</ul>
-		</ul>
-		</div>
-
+	
+	 			<%= link_to "Edit", edit_admin_opportunity_path(opportunity), :class=>"btn btn-info" %>
+				<%= link_to "Delete", delete_admin_opportunity_path(opportunity), :class=>"btn btn-danger" %>
+				
+	
 		</td>
 
 		</tr>
@@ -46,9 +38,9 @@
 
 
 		<div class="other_actions">
-			<%= link_to "Add opportunity", {:action=>"new"}, :class => "btn btn-primary" %>
-	
 			
+
+			<%= link_to "New Opportunity", new_admin_opportunity_path, :class => "btn btn-primary" %>			
 			<%= will_paginate @opportunities %>
 			
 		</div>

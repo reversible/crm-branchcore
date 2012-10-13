@@ -1,4 +1,4 @@
-class AccountsController < ApplicationController
+class Admin::AccountsController < ApplicationController
 
   layout "admin"
   
@@ -41,7 +41,7 @@ class AccountsController < ApplicationController
 
       flash[:notice] = "Account created"
 
-      redirect_to :action => "list"
+      redirect_to admin_accounts_path
 
     else
 
@@ -63,7 +63,7 @@ class AccountsController < ApplicationController
     @account = Account.find(params[:id])
     if @account.update_attributes(params[:account])
       flash[:notice] = 'Account updated.'
-      redirect_to(:action => 'list')
+      redirect_to admin_accounts_path
     else
       @users = User.order('id ASC')
       @business_types = BusinessType.order('id ASC')
@@ -77,8 +77,8 @@ class AccountsController < ApplicationController
 
   def destroy
     Account.find(params[:id]).destroy
-    flash[:notice] = "Account destroyed."
-    redirect_to(:action => 'list')
+    flash[:notice] = "Account deleted."
+    redirect_to admin_accounts_path
   end
 
 end

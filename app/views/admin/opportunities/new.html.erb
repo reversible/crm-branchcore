@@ -1,20 +1,17 @@
 <div class="row">
 	<div class="span6 offset3" >
-		<% @page_title = 'Create Opportunity' %>
+		<% @page_title = 'New Opportunity' %>
 
 		
 			
 <div class="well">
-			<%= form_for(:opportunity, :url => {:action => 'create'}, :html =>{:class=>"form-horizontal"}) do |f| %>
-			<legend>Create Opportunity</legend>	
-			<%= render(:partial => 'form', :locals => {:f => f} ) %>
+		
+			<legend>New Opportunity</legend>	
+			<%= render 'form' %>
 			
-			<div class="form-buttons pull-right" >
-				<%= link_to("Back to List", {:action => 'list'}, :class => 'btn btn-inverse') %>
-				<%= submit_tag 'Create Opportunity', :class =>"btn btn-primary" %>
-			</div>
+			
 <br />
-			<% end %>
+	
 		</div>
 
 	</div>

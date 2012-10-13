@@ -30,7 +30,7 @@
 					<div class="nav-collapse collapse">
 						<ul class="nav">
 
-							<li class="dropdown <%= controller?("users") || controller?("")  ? "active":"" %>">
+							<li class="dropdown <%= controller?("admin/users") || controller?("")  ? "active":"" %>">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 
@@ -47,7 +47,7 @@
 								</ul>
 							</li>
 
-							<li class="dropdown <%= controller?("contacts") ? "active":"" %>">
+							<li class="dropdown <%= controller?("admin/contacts") ? "active":"" %>">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contacts <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 
@@ -63,7 +63,7 @@
 								</ul>
 							</li>
 
-							<li class="dropdown <%= controller?("business_types") ? "active":"" %>">
+							<li class="dropdown <%= controller?("admin/business_types") ? "active":"" %>">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Business Types <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 
@@ -78,7 +78,7 @@
 								</ul>
 							</li>
 
-							<li class="dropdown <%= controller?("accounts") ? "active":"" %>">
+							<li class="dropdown <%= controller?("admin/accounts") ? "active":"" %>">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Accounts <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 
@@ -94,7 +94,7 @@
 								</ul>
 							</li>
 
-							<li class="dropdown <%= controller?("opportunities") ? "active":"" %>">
+							<li class="dropdown <%= controller?("admin/opportunities") ? "active":"" %>">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Opportunities <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 
@@ -110,7 +110,7 @@
 								</ul>
 							</li>
 
-							<li class="dropdown <%= controller?("tasks") ? "active":"" %>">
+							<li class="dropdown <%= controller?("admin/tasks") ? "active":"" %>">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tasks <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 
@@ -161,6 +161,11 @@
 				<p>
 					&copy; Branchcore CRM - Company 2012
 				</p>
+
+<hr>
+
+<!-- <%= params.inspect %> -->
+
 			</footer>
 
 		</div>

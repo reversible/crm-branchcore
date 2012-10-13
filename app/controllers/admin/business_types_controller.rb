@@ -1,4 +1,4 @@
-class BusinessTypesController < ApplicationController
+class Admin::BusinessTypesController < ApplicationController
   layout "admin"
   
     before_filter :confirm_logged_in
@@ -35,7 +35,7 @@ class BusinessTypesController < ApplicationController
 
       flash[:notice] = 'Business Type created.'
 
-      redirect_to(:action => 'list')
+      redirect_to admin_business_types_path
 
     else
       render("new")
@@ -52,7 +52,7 @@ class BusinessTypesController < ApplicationController
     @business_type = BusinessType.find(params[:id])
     if @business_type.update_attributes(params[:business_type])
       flash[:notice] = 'Business Type updated.'
-      redirect_to(:action => 'list')
+          redirect_to admin_business_types_path
     else
       render("edit")
     end
@@ -64,8 +64,8 @@ class BusinessTypesController < ApplicationController
 
   def destroy
     BusinessType.find(params[:id]).destroy
-    flash[:notice] = "Business Type destroyed."
-    redirect_to(:action => 'list')
+    flash[:notice] = "Business Type deleted."
+         redirect_to admin_business_types_path
   end
 
 end

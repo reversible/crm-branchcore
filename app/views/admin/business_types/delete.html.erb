@@ -5,17 +5,16 @@
 
   <h2>Delete Business Type</h2>
   
-  <%= form_for(:business_type, :url => {:action => 'destroy', :id => @business_type.id}) do |f| -%>
+  
 
     <p>Are you sure you want to permanently delete this business type?</p>
   
     <p class="reference-name"><%= @business_type.sector %></p>
   
     <div class="form-buttons">
-    	<%= link_to("Back to List", {:action => 'list'}, :class => 'btn btn-inverse') %>
-      <%= submit_tag "Delete Admin User", :class => "btn btn-danger" %>
+    	<%= link_to("Back to List", admin_business_types_path, :class => 'btn btn-inverse') %>
+      <%= link_to "Delete", [:admin,@business_type], method: :delete,  :class => 'btn btn-danger' %>
     </div>
-    
-  <% end %>
+
 </div>
 </div>

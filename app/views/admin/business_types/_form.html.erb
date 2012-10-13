@@ -7,12 +7,20 @@
 	<% end %>
 </ul>
 <% end %>
-
+<%= form_for [:admin, @business_type], :html =>{:class=>"form-horizontal"} do |f| %>
 <div class="control-group">
 	<%= f.label :sector, :class=>"control-label" %>
 	<div class="controls">
 		<%= f.text_field(:sector) %>
 	</div>
 </div>
+
+<div class="form-buttons pull-right" >
+
+	<%= link_to("Back to List", admin_business_types_path, :class => 'btn btn-inverse') %>
+	<%= f.submit :class =>"btn btn-primary" %>
+</div>
+<br />
+<% end %>
 
 

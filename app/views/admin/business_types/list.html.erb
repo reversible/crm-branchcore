@@ -17,19 +17,8 @@
 			<td><%= business_type.sector %></td>
 			<td> 
 				
-			<div class="btn-group">
-			<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Business Type</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"> </span> </a> 
-				<ul class="dropdown-menu">
-			
-				
-					
-				<li> <%= link_to("Edit", {:action => 'edit', :id => business_type.id}) %> </li>
-				<li><%= link_to("Delete".html_safe, {:action => 'delete', :id => business_type.id}) %></li>
-				<ul>
-					
-				</ul>
-				</ul>
-			</div> 
+			<%= link_to "Edit", edit_admin_business_type_path(business_type), :class=>"btn btn-info" %>
+			<%= link_to "Delete",delete_admin_business_type_path(business_type), :class=>"btn btn-danger" %>
 				
 			</td>
 			
@@ -41,7 +30,7 @@
 		
 		
 		<div class="other_actions">
-			<%= link_to "Add business type", {:action=>"new"}, :class => "btn btn-primary" %>
+			<%= link_to "New business type", new_admin_business_type_path, :class => "btn btn-primary" %>
 			<br />
 				<%= will_paginate @business_types %>
 		</div>	

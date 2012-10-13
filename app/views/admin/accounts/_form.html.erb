@@ -8,7 +8,7 @@
 </ul>
 <% end %>
 
-<table summary="contact form fields">
+<%= form_for([:admin,@account], :html =>{:class=>"form-horizontal"}) do |f| %>
 
 	<div class="control-group">
 		<%= f.label :user_id, "User",:class=>"control-label" %>
@@ -61,4 +61,10 @@
 		</div>
 	</div>
 
-</table>
+	<div class="form-buttons pull-right" >
+				<%= link_to("Back to List", admin_accounts_path, :class => 'btn btn-inverse') %>
+				<%= f.submit  :class =>"btn btn-primary" %>
+	</div>
+
+
+<% end %> 

@@ -5,16 +5,13 @@
 		
 			
 <div class="well">
-			<%= form_for(:account, :url => {:action => 'create'}, :html =>{:class=>"form-horizontal"}) do |f| %>
-			<legend>Create account</legend>	
-			<%= render(:partial => 'form', :locals => {:f => f} ) %>
 			
-			<div class="form-buttons pull-right" >
-				<%= link_to("Back to List", {:action => 'list'}, :class => 'btn btn-inverse') %>
-				<%= submit_tag 'Create Account', :class =>"btn btn-primary" %>
-			</div>
+			<legend>New Account</legend>	
+			<%= render 'form' %>
+			
+			
 <br />
-			<% end %>
+				
 		</div>
 
 	</div>

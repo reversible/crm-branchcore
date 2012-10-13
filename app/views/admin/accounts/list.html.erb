@@ -2,7 +2,7 @@
 	<div class="span10 offset1">
 		<h1>Listing Accounts</h1>
 
-		<table class="table table-hover"">
+		<table class="table table-hover">
 		<thead>
 		<tr>
 		<th>Id</th>	
@@ -27,18 +27,9 @@
 
 		<td>
 
-		<div class="btn-group">
-		<a class="btn btn-primary" href="#"><i class="icon-account icon-white"></i> account</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"> </span> </a>
-		<ul class="dropdown-menu">
-
-		<li> <%= link_to("Edit", {:action => 'edit', :id => account.id}) %> </li>
-		<li><%= link_to("Delete".html_safe, {:action => 'delete', :id => account.id}) %></li>
-		<ul>
-
-		</ul>
-		</ul>
-		</div>
-
+	 			<%= link_to "Edit", edit_admin_account_path(account), :class=>"btn btn-info" %>
+				<%= link_to "Delete", delete_admin_account_path(account), :class=>"btn btn-danger" %>
+				
 		</td>
 
 		</tr>
@@ -49,7 +40,7 @@
 
 
 		<div class="other_actions">
-			<%= link_to "Add Account", {:action=>"new"}, :class => "btn btn-primary" %>
+			<%= link_to "Add Account", new_admin_account_path , :class => "btn btn-primary" %>
 	
 			
 			<%= will_paginate @accounts %>

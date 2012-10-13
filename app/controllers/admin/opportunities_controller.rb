@@ -1,4 +1,4 @@
-class OpportunitiesController < ApplicationController
+class Admin::OpportunitiesController < ApplicationController
   
   
    layout "admin"
@@ -45,7 +45,7 @@ class OpportunitiesController < ApplicationController
 
       flash[:notice] = "Opportunity created"
 
-      redirect_to :action => "list"
+      redirect_to admin_opportunities_path
 
     else
     @users = User.order('id ASC')
@@ -66,7 +66,7 @@ class OpportunitiesController < ApplicationController
     @opportunity = Opportunity.find(params[:id])
     if @opportunity.update_attributes(params[:opportunity])
       flash[:notice] = 'Opportunity updated.'
-      redirect_to(:action => 'list')
+      redirect_to admin_opportunities_path
     else
       @users = User.order('id ASC')
       @accounts = Account.order('id ASC')
@@ -80,8 +80,8 @@ class OpportunitiesController < ApplicationController
 
   def destroy
     Opportunity.find(params[:id]).destroy
-    flash[:notice] = "Opportunity destroyed."
-    redirect_to(:action => 'list')
+    flash[:notice] = "Opportunity deleted."
+    redirect_to admin_opportunities_path
   end
 
   
