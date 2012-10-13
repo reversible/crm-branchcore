@@ -6,27 +6,26 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.delete_all
-50.times do
+#350.times do
   
 user = User.new( first_name: 'Raul Ivan', last_name:"Garcia Valdivia",username:"reversible_82",password:"kamikaze",email:"raul.ivan.82@hotmail.com",is_admin:true )
 
 user.save
 
-end
+#end
 
 
-puts "Success: Users data loaded"
+#puts "Success: Users data loaded"
 
 
 Contact.delete_all
-50.times do
-contact = Contact.create([
-  { first_name: 'Raul Ivan', last_name:"Garcia Valdivia",address:"reversible_82",status:"kamikaze",email:"raul.ivan.82@hotmail.com",user: User.last },
-  { first_name: 'Mario', last_name:"Zarate",address:"zarate_82",status:"status",email:"zarate82@hotmail.com",user: User.last},
-   { first_name: 'Jose', last_name:"Morris",address:"morris_82",status:"status",email:"morris.82@hotmail.com",user: User.last },
-    { first_name: 'Adriana', last_name:"Utomic",address:"utonic_82",status:"status",email:"utomic.82@hotmail.com",user: User.last},
-     { first_name: 'Karla', last_name:"Kwan",address:"kwan_82",status:"status",email:"kwan.82@hotmail.com",user: User.last}
+50.times do |i|
+contacts = Contact.create([
+  { first_name: 'Raul Ivan', last_name:"Garcia Valdivia",address:"Calle Amadis de Gaula No 2323, Villas del Rey", status:"ACTIVE",email:"#{1.to_s}raul.ivan.82@hotmail.com",user: User.last },
+  { first_name: 'Mario', last_name:"Zarate",address:"Calle Amadis de Gaula No 2323, Villas del Rey",status:"ACTIVE", email:"#{1.to_s}zarate82@hotmail.com",user: User.last},
+   { first_name: 'Jose', last_name:"Morris",address:"Calle Amadis de Gaula No 2323, Villas del Rey",status:"ACTIVE", email:"#{1.to_s}morris.82@hotmail.com",user: User.last },
+    { first_name: 'Adriana', last_name:"Utomic",address:"Calle Amadis de Gaula No 2323, Villas del Rey",status:"ACTIVE", email:"#{1.to_s}utomic.82@hotmail.com",user: User.last},
+     { first_name: 'Karla', last_name:"Kwan",address:"Calle Amadis de Gaula No 2323, Villas del Rey",status:"ACTIVE", email:"#{1.to_s}kwan.82@hotmail.com",user: User.last}
 ])
 end
 puts "Success: Contacts data loaded"
@@ -47,8 +46,8 @@ Account.delete_all
 50.times do
 accounts = Account.create([
   { name: 'Nike', address: "some place in NYC", description:"Great shoes company", account_type: "enterprice", email: "rg@rdedeg.com", user: User.last , business_type: BusinessType.last  },
-  { name: 'CocaCOla', address: "some place in Minesota", description:"Great Soda company", account_type: "small", email: "rg@rdedeg.com",  user: User.last , business_type: BusinessType.last  },
-  { name: '37 Signals', address: "some place in Chicago", description:"Web application", account_type: "huge", email: "rg@rdedeg.com",  user: User.last , business_type: BusinessType.last },
+  { name: 'CocaCOla', address: "some place in Minesota", description:"Great Soda company", account_type: "small", email: "rgc@rdedeg.com",  user: User.last , business_type: BusinessType.last  },
+  { name: '37 Signals', address: "some place in Chicago", description:"Web application", account_type: "huge", email: "rgr@rdedeg.com",  user: User.last , business_type: BusinessType.last },
 ])
 end
 puts "Success: Accounts data loaded"
