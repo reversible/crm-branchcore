@@ -7,12 +7,12 @@
 		<tr>
 		<th>Id</th>
 		<th>Subject</th>
-		<th>User Assigned</th>
+		<th class="hidden-tablet">User Assigned</th>
 		<th>Contact</th>
-		<th>Account</th>
+		<th class="hidden-tablet">Account</th>
 
-		<th>Start Date</th>
-		<th>Limit Date</th>
+		<th >Start Date</th>
+		<th class="hidden-tablet">Limit Date</th>
 		<th>End Date</th>
 
 		<th>Actions</th>
@@ -23,11 +23,11 @@
 		<tr>
 		<td><%= task.id %></td>
 		<td><%= task.subject %></td>
-		<td><%= task.user ? task.user.name : "N/A"  %></td>
+		<td class="hidden-tablet"><%= task.user ? task.user.name : "N/A"  %></td>
 		<td><%= task.contact ? task.contact.name : "N/A"  %></td>
-		<td><%= task.account ? task.account.name : "N/A"  %></td>
+		<td class="hidden-tablet"><%= task.account ? task.account.name : "N/A"  %></td>
 		<td><%= task.start_date.strftime("%m/%d/%Y") %></td>
-		<td><%= task.limit_date.strftime("%m/%d/%Y") %></td>
+		<td class="hidden-tablet"><%= task.limit_date.strftime("%m/%d/%Y") %></td>
 		<td><%= task.end_date.strftime("%m/%d/%Y") %></td>
 
 		<td>

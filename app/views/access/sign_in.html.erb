@@ -1,10 +1,21 @@
-<div class="row-fluid">
-	<div class="span4 offset4" >
+<div class="modal" id="myModal">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">
+			×
+		</button>
+		<h3>Admin Login</h3>
+	</div>
+	<div class="modal-body">
 		<% @page_title = 'Sign in' %>
-		<div class="well">
+
+			<% flash.each do |name, msg| %>
+			<div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+				<a class="close" data-dismiss="alert">&#215;</a>
+				<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+			</div>
+			<% end %>
 
 			<%= form_tag(:action => 'attempt_login', :html =>{:class=>"form-horizontal"}) do %>
-			<legend>Sign in</legend>
 			<div class="control-group">
 				<%= label_tag(:username,"Username",:class=>"control-label") %>
 				<div class="controls">
@@ -18,11 +29,13 @@
 					<%= password_field_tag(:password) %>
 				</div>
 			</div>
-			<div class="control-group">
-				<%= submit_tag("Log In") %>
+			<div class="control-group pull-right">
+				
 			</div>
-		</div>
-
-		<% end %>
+<div class="modal-footer">
+		<input type="reset" class="btn" data-dismiss="modal" value="Cancel" />
+		<%= submit_tag "Log In",  :class =>"btn btn-primary" %>	
 	</div>
-</div>
+
+	<% end %>
+</div></div>

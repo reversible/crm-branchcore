@@ -23,19 +23,14 @@
 	<body>
 		<div class="container-fluid">
 
-			<% flash.each do |name, msg| %>
-			<div class="alert alert-<%= name == :notice ? "success" : "error" %>">
-				<a class="close" data-dismiss="alert">&#215;</a>
-				<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-			</div>
-			<% end %>
+		
 
 			<%= yield %>
 
 			<hr>
 			<footer>
 				<p>
-					&copy; Branchcore CRM - 2012
+				
 				</p>
 			</footer>
 
@@ -47,6 +42,28 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 
 		<!-- <%= javascript_include_tag    "jquery","bootstrap-transition","bootstrap-alert","bootstrap-modal","bootstrap-dropdown","bootstrap-scrollspy","bootstrap-tab","bootstrap-tooltip","bootstrap-button","bootstrap-collapse","bootstrap-carousel","bootstrap-typeahead" %> -->
+
+
+
+
+		<script>
+	$(document).ready(function() {
+
+		$("#myModal").modal({
+
+			backdrop : true,
+			keyboard : false,
+			show : true
+
+		});
+
+		$('#myModal').on('hide', function() {
+			return false;
+		});
+
+	});
+
+</script>
 
 	</body>
 </html>

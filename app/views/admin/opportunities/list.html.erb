@@ -9,7 +9,7 @@
 		<th>Responsable User</th>
 		<th>Linked Account</th>
 		<th>Amount</th>
-		<th>Status</th>
+		<th class="hidden-tablet">Status</th>
 		<th>Actions</th>
 		</tr>
 		</thead>
@@ -20,7 +20,7 @@
 		<td><%= opportunity.user ? opportunity.user.name : "N/A"  %></td>
 		<td><%= opportunity.account ? opportunity.account.name : "N/A"  %></td>
 		<td><%= opportunity.amount %></td>
-		<td><%= opportunity.status %></td>
+		<td class="hidden-tablet"><%= opportunity.status %></td>
 
 		<td>
 	

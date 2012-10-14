@@ -8,8 +8,7 @@
 		<th>Id</th>	
 		<th>First Name</th>
 		<th>Last Name</th>
-		<th>Status</th>
-		<th>User</th>
+		<th class="hidden-tablet">User</th>
 		<th>Email</th>
 
 		<th>Actions</th>
@@ -21,8 +20,7 @@
 		<td><%= contact.id %></td>	
 		<td><%= contact.first_name %></td>
 		<td><%= contact.last_name %></td>
-		<td><%= contact.status %></td>
-		<td><%= contact.user ? contact.user.name : "N/A"  %></td>
+		<td class="hidden-tablet"><%= contact.user ? contact.user.name : "N/A"  %></td>
 		<td><%= contact.email %></td>
 
 		<td>

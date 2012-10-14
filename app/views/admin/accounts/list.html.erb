@@ -8,9 +8,9 @@
 		<th>Id</th>	
 		<th>Name</th>
 		<th>Email</th>
-		<th>Type</th>
+		<th class="hidden-tablet">Type</th>
 		<th>User</th>
-		<th>Business Type</th>
+		<th class="hidden-tablet">Business Type</th>
 
 		<th>Actions</th>
 		</tr>
@@ -21,9 +21,9 @@
 		<td><%= account.id %></td>	
 		<td><%= account.name %></td>
 		<td><%= account.email %></td>
-		<td><%= account.account_type %></td>
+		<td class="hidden-tablet"><%= account.account_type %></td>
 		<td><%= account.user ? account.user.name : "N/A"  %></td>
-		<td><%= account.business_type ? account.business_type.sector : "N/A"  %></td>
+		<td class="hidden-tablet"><%= account.business_type ? account.business_type.sector : "N/A"  %></td>
 
 		<td>
 
