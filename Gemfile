@@ -5,8 +5,31 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 
+group :development, :test do
+  gem 'rspec-rails', "2.11.0"
+  gem 'factory_girl_rails'
+  gem 'minitest'
+  gem 'mysql2'
+end
+
+
+group :development do
+
+
+
+end
+
+
+group :test do
+
+gem 'faker'
+gem 'capybara'
+gem 'guard-rspec'
+gem 'launchy'
+
+
+end
 
 
 group :production do
@@ -33,6 +56,7 @@ group :assets do
 
   
 end
+
 
 gem 'jquery-rails'
 

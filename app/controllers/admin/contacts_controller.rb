@@ -6,8 +6,7 @@ class Admin::ContactsController < ApplicationController
   
   def  index
     
-    @contacts= Contact.paginate(:page => params[:page])
-    
+    @contacts= Contact.all
     render "list"
 
   end

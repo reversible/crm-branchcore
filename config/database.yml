@@ -28,7 +28,7 @@ test:
   database: crm-branchcore_test
   pool: 5
   username: root
-  password:
+  password: Torombolo_82
   host: localhost
 
 production:
