@@ -5,6 +5,13 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'libv8', '~> 3.11.8'
+
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby, :require => 'execjs'
+
+
+
 group :development, :test do
   gem 'rspec-rails', "2.11.0"
   gem "factory_girl", "~> 2.6.4"
@@ -57,6 +64,9 @@ end
 gem 'jquery-rails'
 
 gem 'will_paginate', '~> 3.0'
+
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
