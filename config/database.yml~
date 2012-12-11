@@ -12,7 +12,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: ethical_crm
+  database: crm-branchcore_development
   pool: 5
   username: root
   password: Torombolo_82
@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: ethical_crm
+  database: crm-branchcore_production
   pool: 5
-  username: ethical_crm
-  password: Torombolo_82
+  username: root
+  password:
   host: localhost
