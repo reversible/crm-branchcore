@@ -8,7 +8,7 @@ describe BusinessType do
 
 
   it "is invalid without a sector name" do
-	FactoryGirl.build(:business_type, sector: nil).should_not be_valid  	
+	FactoryGirl.build(:business_type, :sector => nil).should_not be_valid  	
   end
 
   it "is invalid with a sector name with more than 50 characters" do

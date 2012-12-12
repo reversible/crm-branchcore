@@ -25,7 +25,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: crm-branchcore_test
+  database: ethical_crm_test
   pool: 5
   username: root
   password: Torombolo_82

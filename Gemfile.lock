@@ -193,6 +193,7 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   launchy
+  libv8
   minitest
   mysql2
   pg

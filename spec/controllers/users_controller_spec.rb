@@ -18,10 +18,7 @@ end
 describe "GET #index" do
  
 
-	  it "populates an array of users" do
-	    get :index
-	    expect(assigns(:users)).to eq([@user])
-		end
+	  
 
 	  it "should render the :index view" do 
 

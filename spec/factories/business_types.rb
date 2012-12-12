@@ -11,7 +11,7 @@ FactoryGirl.define do
   end
 
 
-	factory :business_type_with_long_sector_name, parent: :business_type do |f|
+	factory :business_type_with_long_sector_name, :parent => :business_type do |f|
 	 
 	    f.sector{ Faker::Lorem.characters }
 	 
